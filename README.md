@@ -17,7 +17,7 @@ This repo contains the source code of the feed for nebulei.com
 1. Node: any 12.x version starting with v12.0.0 or greater
 1. Yarn v1: See [Yarn website for installation instructions](https://yarnpkg.com/lang/en/docs/install/)
 1. A fork of the repo (for any contributions)
-1. A clone of the [nebulei auth repo](https://github.com/nebulei/nebulei-feed) on your local machine
+1. A clone of the [nebulei feed repo](https://github.com/nebulei/nebulei-feed) on your local machine
 
 ### Installation
 
