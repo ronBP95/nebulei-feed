@@ -1,0 +1,26 @@
+@import-normalize;
+@tailwind base;
+@tailwind components;
+
+
+@layer components {
+    #NotFound {
+        @apply bg-gradient-to-r from-primary to-secondary flex items-center justify-center h-screen w-full
+    }
+
+    #NotFoundTitle {
+        @apply mb-4 text-7xl tracking-tight font-extrabold text-white
+    }
+
+    #NotFoundDesc1 {
+        @apply mb-4 text-3xl tracking-tight font-bold text-white md:text-4xl
+    }
+    
+    #NotFoundDesc2 {
+        @apply mb-10 text-lg font-light text-white
+    }
+
+    #NotFoundLink {
+        @apply bg-white text-gray-700 font-semibold py-3 px-4 rounded-full hover:bg-gray-200
+    }
+}
