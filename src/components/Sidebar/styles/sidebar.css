@@ -1,0 +1,36 @@
+@import-normalize;
+@tailwind base;
+@tailwind components;
+
+@layer components {
+    #Sidebar {
+        @apply fixed top-0 right-0 h-screen w-16 flex flex-col bg-white dark:bg-gray-900 shadow-lg
+    }
+
+    #SidebarItems {
+        @apply h-full
+    }
+
+    #SidebarElement {
+        @apply relative flex items-center justify-center h-12 w-12 my-2 mx-auto
+    bg-gray-200 hover:bg-gray-400 dark:bg-gray-800 
+        hover:rounded-xl rounded-3xl
+        transition-all duration-100 ease-linear
+        cursor-pointer shadow-lg ;
+    }
+
+    #SidebarLogo {
+        @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto
+    }
+
+    #SidebarIcon {
+        @apply h-6 w-6 text-gray-700
+    }
+
+    #SidebarHR {
+        @apply bg-gray-200 dark:bg-gray-800 
+        border border-gray-200 dark:border-gray-800 rounded-full
+        mx-2 my-6;
+    }
+
+}

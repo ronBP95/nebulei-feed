@@ -1,17 +1,31 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 
-import { Feed, Recommend} from './container/index';
+import * as ROUTES from './constants/routes';
+
+import Sidebar from './components/Sidebar/index'
+import Topnav from './components/TopNav';
+
+import { Feed, Profile } from './container/index';
+import { NotFound } from './container/index';
+
 
 
 function App() {
   return (
-    <>
+    <div id='App' className='flex'>
+
+      <Topnav />  
+
+      <Sidebar />
+
       <Routes>
-        <Route path="/" element={<Feed />}/>
-        <Route path="/recommend" element={<Recommend />} />
+        <Route path={ROUTES.Feed} element={<Feed />}/>
+        <Route path={ROUTES.Profile} element={<Profile />}/>
+        <Route path={ROUTES.NotFound} element={<NotFound />}/>
       </Routes>
-    </>
+
+    </div>
   );
 };
 
