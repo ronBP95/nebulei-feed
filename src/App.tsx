@@ -14,17 +14,11 @@ import { NotFound } from './container/index';
 function App() {
   return (
     <div id='App' className='flex'>
-
-      <Topnav />  
-
-      <Sidebar />
-
       <Routes>
         <Route path={ROUTES.Feed} element={<Feed />}/>
         <Route path={ROUTES.Profile} element={<Profile />}/>
         <Route path={ROUTES.NotFound} element={<NotFound />}/>
       </Routes>
-
     </div>
   );
 };
