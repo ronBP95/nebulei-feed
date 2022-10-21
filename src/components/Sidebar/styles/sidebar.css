@@ -4,7 +4,7 @@
 
 @layer components {
     #Sidebar {
-        @apply fixed top-0 right-0 h-screen w-16 flex flex-col bg-white dark:bg-gray-900 shadow-lg
+        @apply fixed top-0 right-0 h-screen w-16 hidden sm:flex flex-col bg-white dark:bg-gray-900 shadow-lg
     }
 
     #SidebarItems {
