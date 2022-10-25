@@ -44,7 +44,7 @@ function Feed () {
     <div className='flex flex-row'>
       <div className="flex flex-col w-full">
         <TopNav />
-        <section className="flex justify-center">
+        <section className="flex justify-center h-auto">
           <Post feed={feed}/>
         </section>
       </div>

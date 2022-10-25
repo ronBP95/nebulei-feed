@@ -1,4 +1,9 @@
 import React from 'react'
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import SportsMmaIcon from '@mui/icons-material/SportsMma';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 
 interface PostInterface {
     user: string
@@ -11,24 +16,28 @@ interface IProps {
 }
 
 const Post = ({ feed }: IProps) => {
-    
-
     return (
-        // <div className="flex flex-col justify-center w-1/2 bg-blue-400 mr-0 sm: mr-16">
-        //     <div className="flex gap-3">
-        //         <p>Display Name</p>
-        //         <p>User @Handle</p>
-        //     </div>
-        //     <p>Content</p>
-        //     <ul className='flex gap-3'>
-        //         <li>Comment</li>
-        //         <li>Like / Dislike</li>
-        //         <li>Duel</li>
-        //     </ul>
-        // </div>
-        <div>
-            {feed.map((item: { user: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined }) => {
-                return <div>{item.user}</div>
+        <div className="w-2/3 h-auto">
+            {feed.map((item: any) => {
+                return (
+                    <div className="flex flex-row w-full justify-start mt-10 mr-0 sm: mr-16 border rounded-md">
+                        <div className="flex ml-3 mr-3 mt-3">
+                            <AccountCircleIcon sx={{fontSize: "48px"}}/>
+                        </div>
+                        <div>
+                            <div className="flex gap-3 mb-3 mt-3">
+                                <p>{item.user}</p>
+                                <p>{item.handle}</p>
+                            </div>
+                            <p className='flex gap-3 mb-3'>{item.content}</p>
+                            <ul className='flex gap-3 mb-3'>
+                                <li><ChatBubbleOutlineIcon /></li>
+                                <li><FavoriteBorderIcon /></li>
+                                <li><SportsMmaIcon /></li>
+                            </ul>
+                        </div>
+                    </div>
+                )
             })}
         </div>
     )
