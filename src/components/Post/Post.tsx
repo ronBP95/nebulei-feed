@@ -1,23 +1,35 @@
 import React from 'react'
 
-const Post = () => {
-    let arr: number[] = []
+interface PostInterface {
+    user: string
+    handle: string
+    content: string
+}
 
-    const [feed, setFeed] = React.useState(arr)
-    let testArray: number[] = [1, 2, 3, 4]
-  
-    React.useEffect (() => {
-      function getFeed () {
-        setFeed(testArray.map(x => x))
-      }
-      getFeed();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-  
-    console.log("Feed: ", feed)
+interface IProps {
+    feed: any
+}
+
+const Post = ({ feed }: IProps) => {
+    
+
     return (
+        // <div className="flex flex-col justify-center w-1/2 bg-blue-400 mr-0 sm: mr-16">
+        //     <div className="flex gap-3">
+        //         <p>Display Name</p>
+        //         <p>User @Handle</p>
+        //     </div>
+        //     <p>Content</p>
+        //     <ul className='flex gap-3'>
+        //         <li>Comment</li>
+        //         <li>Like / Dislike</li>
+        //         <li>Duel</li>
+        //     </ul>
+        // </div>
         <div>
-            <p>Post Component</p>
+            {feed.map((item: { user: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined }) => {
+                return <div>{item.user}</div>
+            })}
         </div>
     )
 }
