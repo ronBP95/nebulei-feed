@@ -4,21 +4,25 @@ import { Helmet } from "react-helmet";
 // Component Imports
 import TopNav from '../../components/TopNav/'
 import Sidebar from '../../components/Sidebar/';
+import Post from '../../components/Post';
 
 function Feed() {
-  type NumberArray = Array<number>;
-  const [feed, setFeed] = React.useState(NumberArray)
-  const testFeed: number[] = [1, 2]
-  function doubleNumber() {
-    testFeed.map((item) => {
-      setFeed(item)
-    })
-  }
+  let arr: number[] = []
 
-  React.useState(() => {
-    doubleNumber()
-  }, []) 
+  const [feed, setFeed] = React.useState(arr)
+  let testArray: number[] = [1, 2, 3, 4]
 
+  React.useEffect (() => {
+    function getFeed () {
+      setFeed(testArray.map(x => x))
+    }
+    getFeed();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Feed must be mapped here and passed into Post component as props
+
+  console.log("Feed: ", feed)
 
   return (
     <div className="w-full h-screen">
@@ -31,7 +35,7 @@ function Feed() {
       <div className="flex flex-col w-full">
         <TopNav />
         <section className="relative">
-          {feed}
+          <Post />
         </section>
       </div>
       <Sidebar />

@@ -9,8 +9,6 @@ import Topnav from './components/TopNav';
 import { Feed, Profile } from './container/index';
 import { NotFound } from './container/index';
 
-
-
 function App() {
   return (
     <div id='App' className='flex'>
